@@ -1,0 +1,168 @@
+use fyrox::core::color::Color;
+
+use crate::*;
+
+pub fn build_main_menu(ctx: &mut BuildContext) -> Handle<UiNode> {
+    ScreenBuilder::new(
+        WidgetBuilder::new()
+            .with_name("ScreenWrapper")
+            .with_child(GridBuilder::new(
+                WidgetBuilder::new()
+                    .with_child(BorderBuilder::new(
+                        WidgetBuilder::new()
+                            .with_child(
+                                StackPanelBuilder::new(
+                                    WidgetBuilder::new()
+                                        .with_width(480.0)
+                                        .with_height(500.0)
+                                        .with_vertical_alignment(VerticalAlignment::Center)
+                                        .with_name("ButtonWrapper")
+                                        .with_child(
+                                            ButtonBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("CreateButton")
+                                            )
+                                                .with_text("Create Session")
+                                                .build(ctx))
+                                        .with_child(ButtonBuilder::new(
+                                            WidgetBuilder::new()
+                                                .with_name("JoinButton")
+                                        )
+                                                    .with_text("Join Session")
+                                                    .build(ctx)
+                                        )
+                                ).build(ctx)
+                            )
+                    ).build(ctx)
+                    )
+            ).build(ctx)
+            )
+    ).build(ctx)
+}
+
+pub fn build_create_menu(ctx: &mut BuildContext) -> Handle<UiNode> {
+    ScreenBuilder::new(
+        WidgetBuilder::new()
+            .with_name("ScreenWrapper")
+            .with_child(GridBuilder::new(
+                WidgetBuilder::new()
+                    .with_child(BorderBuilder::new(
+                        WidgetBuilder::new()
+                            .with_child(
+                                StackPanelBuilder::new(
+                                    WidgetBuilder::new()
+                                        .with_width(480.0)
+                                        .with_height(500.0)
+                                        .with_vertical_alignment(VerticalAlignment::Center)
+                                        .with_name("SessionInfo")
+                                        .with_child(
+                                            TextBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("MainLabel")
+                                            )
+                                                .with_font_size(30.0)
+                                                .build(ctx)
+                                        )
+                                        .with_child(
+                                            TextBoxBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("IdBox")
+                                            )
+                                                .with_text("Session ID")
+                                                .build(ctx))
+                                        .with_child(
+                                            TextBoxBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("PasswordBox")
+                                            )
+                                                .with_text("Password")
+                                                .build(ctx)
+                                        )
+                                        .with_child(ButtonBuilder::new(
+                                            WidgetBuilder::new()
+                                                .with_name("CreateSession")
+                                        )
+                                                    .with_text("Create Session")
+                                                    .build(ctx)
+                                        )
+                                        .with_child(ButtonBuilder::new(
+                                            WidgetBuilder::new()
+                                                .with_name("BackButton")
+                                                .with_width(100.0)
+                                                .with_background(fyrox::gui::brush::Brush::Solid(Color::RED))
+                                        )
+                                                    .with_text("Back")
+                                                    .build(ctx)
+                                )
+                                ).build(ctx)
+                            )
+                    ).build(ctx)
+                    )
+            ).build(ctx)
+            )
+    ).build(ctx)
+}
+
+pub fn build_join_menu(ctx: &mut BuildContext) -> Handle<UiNode> {
+    ScreenBuilder::new(
+        WidgetBuilder::new()
+            .with_name("ScreenWrapper")
+            .with_child(GridBuilder::new(
+                WidgetBuilder::new()
+                    .with_child(BorderBuilder::new(
+                        WidgetBuilder::new()
+                            .with_child(
+                                StackPanelBuilder::new(
+                                    WidgetBuilder::new()
+                                        .with_width(480.0)
+                                        .with_height(500.0)
+                                        .with_vertical_alignment(VerticalAlignment::Center)
+                                        .with_name("SessionInfo")
+                                        .with_child(
+                                            TextBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("MainLabel")
+                                            )
+                                                .with_font_size(30.0)
+                                                .build(ctx)
+                                        )
+                                        .with_child(
+                                            TextBoxBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("IdBox")
+                                            )
+                                                .with_text("Session ID")
+                                                .build(ctx))
+                                        .with_child(
+                                            TextBoxBuilder::new(
+                                                WidgetBuilder::new()
+                                                    .with_name("PasswordBox")
+                                            )
+                                                .with_text("Password")
+                                                .build(ctx)
+                                        )
+                                        .with_child(ButtonBuilder::new(
+                                            WidgetBuilder::new()
+                                                .with_name("JoinSession")
+                                        )
+                                                    .with_text("Join Session")
+                                                    .build(ctx)
+                                        )
+                                        .with_child(ButtonBuilder::new(
+                                            WidgetBuilder::new()
+                                                .with_name("BackButton")
+                                                .with_width(100.0)
+                                                .with_background(fyrox::gui::brush::Brush::Solid(Color::RED))
+                                                .with_foreground(fyrox::gui::brush::Brush::Solid(Color::RED))
+                                        )
+                                            .with_text("Back")
+                                            .build(ctx)
+                                        )
+                                ).build(ctx)
+                            )
+                    ).build(ctx)
+                    )
+            ).build(ctx)
+            )
+    ).build(ctx)
+}

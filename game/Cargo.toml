@@ -1,0 +1,9 @@
+
+[package]
+name = "fyrox_game"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fyrox = {workspace = true}
+deku = "0.16.0"
